@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.esp8266_wifi_ledcontrol.MainActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.android.esp8266_wifi_ledcontrol.MainActivity">
+
+        <Switch
+            android:id="@+id/led_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_below="@+id/led_switch"
+            android:text="Motor Switch ( ON/OFF )" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Welcome to Smart Irrigation" />
+
+        <LinearLayout
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="@dimen/item_padding"
+                android:paddingBottom="@dimen/item_padding_bottom">
+
+                <ImageView
+                    android:id="@+id/temperature_icon"
+                    android:layout_width="@dimen/image_size"
+                    android:layout_height="@dimen/image_size"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_thermometer"
+                    android:tint="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/temperature_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/temperature_icon"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Temp."
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/temperature_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/temperature_title"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="-"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_weather" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="@dimen/item_padding"
+                android:paddingBottom="@dimen/item_padding_bottom">
+
+                <ImageView
+                    android:id="@+id/moisture_icon"
+                    android:layout_width="@dimen/image_size"
+                    android:layout_height="@dimen/image_size"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_moisture"
+                    android:tint="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/moisture_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/moisture_icon"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Moisture"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/moisture_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/moisture_title"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="-"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_weather" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="@dimen/item_padding"
+                android:paddingBottom="@dimen/item_padding_bottom">
+
+                <ImageView
+                    android:id="@+id/water_level_icon"
+                    android:layout_width="@dimen/image_size"
+                    android:layout_height="@dimen/image_size"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_level"
+                    android:tint="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/water_level_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/water_level_icon"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Water Level"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/water_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/water_level_title"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="-"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_weather" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
